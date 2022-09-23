@@ -15,7 +15,7 @@ const NotesGallery = () => {
     <div>
       Notes Gallery
       {
-        notes.map(note => <Note note={note}/>)
+        notes.map(note => <Note key={note.id} note={note}/>)
       }
     </div>
   )
