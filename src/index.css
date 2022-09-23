@@ -16,8 +16,16 @@ code {
     monospace;
 }
 
+.home__plusbtn {
+  position: fixed;
+  bottom: var(--small-padding);
+  right: 50vw;
+  font-size: 4rem;
+  transform: translateX(50%);
+  cursor: pointer;
+}
+
 .layout__container {
-  border: 1px solid black;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
@@ -27,6 +35,7 @@ code {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: var(--small-padding);
 }
+
 
 @media screen and (max-width: 992px) {
   .notes__gallery {
@@ -43,5 +52,9 @@ code {
 @media screen and (max-width: 576px) {
   .notes__gallery {
     grid-template-columns: 1fr;
+  }
+
+  .searchbar__flex {
+    width: 100%;
   }
 }

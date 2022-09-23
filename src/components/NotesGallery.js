@@ -14,7 +14,7 @@ const NotesGallery = () => {
   return (
     <div className='notes__gallery'>
       {
-        notes.map(note => <Note key={note.id} note={note}/>)
+        notes.map(note => <Note key={note.id} note={note} limit />)
       }
     </div>
   )
