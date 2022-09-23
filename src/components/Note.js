@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 const Note = ({ note, limit }) => {
+  const navigate = useNavigate()
   return (
-    <div className="card">
+    <div onClick={() => navigate(`/note/${note.id}`)} className="card" style={limit ? {cursor: "pointer"}: {}}>
       <div className="card-body">
         {
           limit ?
