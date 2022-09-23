@@ -1,3 +1,7 @@
+:root {
+  --small-padding: 0.75rem;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,34 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.layout__container {
+  border: 1px solid black;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.notes__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--small-padding);
+}
+
+@media screen and (max-width: 992px) {
+  .notes__gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .notes__gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .notes__gallery {
+    grid-template-columns: 1fr;
+  }
 }
