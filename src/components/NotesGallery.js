@@ -12,10 +12,9 @@ const NotesGallery = () => {
     {id: "6", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
   ]
   return (
-    <div>
-      Notes Gallery
+    <div className='notes__gallery'>
       {
-        notes.map(note => <Note note={note}/>)
+        notes.map(note => <Note key={note.id} note={note}/>)
       }
     </div>
   )

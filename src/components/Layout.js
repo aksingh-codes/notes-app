@@ -6,8 +6,7 @@ const Layout = ({ children }) => {
     <div>
       <Navbar />
       <div
-        style={{border: "1px solid black" }}
-        className="container-sm container-fluid"
+        className="layout__container container-sm container-fluid"
       >
         {children}
       </div>
