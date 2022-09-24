@@ -1,17 +1,17 @@
-import React from "react";
-import { useNavigate } from "react-router";
+import React, { useContext } from "react";
+import { useNavigate, useParams } from "react-router";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
 import Note from "../components/Note";
+import { NotesContext, NotesDispatchContext } from "../contexts/NoteContext";
+import { DELETE_NOTE } from "../contexts/noteActions";
 
 const View = () => {
-  const note = {
-    id: 12,
-    title: "Title",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum beatae sed sint laboriosam, temporibus qui a laudantium saepe, etiure numquam assumenda dolores. Error facilis corrupti quisquam enim, assumenda ipsum.",
-  };
-  const navigate = useNavigate()
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const notes = useContext(NotesContext);
+  const dispatch = useContext(NotesDispatchContext);
+  const note = notes.find((note) => note.id === id);
 
   return (
     <Layout>
@@ -21,7 +21,15 @@ const View = () => {
         <div className="d-flex gap-2 mt-3" role="group">
           <Button onClick={() => navigate(-1)} variant="outline-dark">Back</Button>
           <Button onClick={() => navigate(`/edit/${note.id}`)} variant="outline-dark">Edit</Button>
-          <Button variant="outline-danger">Delete</Button>
+          <Button
+            onClick={() => {
+              navigate(-1);
+              dispatch({ type: DELETE_NOTE, payload: note.id });
+            }}
+            variant="outline-danger"
+          >
+            Delete
+          </Button>
         </div>
       </div>
     </Layout>
