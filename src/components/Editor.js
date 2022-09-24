@@ -1,19 +1,24 @@
-const Editor = ({heading, note, children}) => {
+const Editor = ({title, setTitle, content, setContent, error, heading, children}) => {
   return (
-    <div className="d-flex flex-column mt-5">
+    <form className="d-flex flex-column mt-5">
         <h5 className="text-muted text-center">{heading}</h5>
         <div className="mb-3">
           <label htmlFor="formControlTitle" className="form-label">
             Title
           </label>
           <input
-            type="email"
-            className="form-control"
+            type="text"
+            className={`form-control ${error?.title && 'is-invalid'}`}
             id="formControlTitle"
             placeholder="Eg. JavaScript Arrays"
-            value={note && note.title}
+            value={title}
+            onChange={e => setTitle(e.target.value)}
             required
           />
+          <div id="validationFeedback" className="invalid-feedback">
+            {error?.title}
+          </div>
+
         </div>
         <div className="mb-3">
           <label htmlFor="formControlContent" className="form-label">
@@ -23,11 +28,12 @@ const Editor = ({heading, note, children}) => {
             className="form-control"
             id="formControlContent"
             rows={10}
-            value={note && note.content}
+            value={content}
+            onChange={e => setContent(e.target.value)}
           ></textarea>
         </div>
         {children}
-      </div>
+      </form>
   )
 }
 
