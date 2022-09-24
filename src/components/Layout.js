@@ -1,16 +1,17 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ navItemRight, children }) => {
   return (
     <div>
-      <Navbar />
+      <Navbar navItemRight={navItemRight}/>
       <div
-        style={{border: "1px solid black" }}
-        className="container-sm container-fluid"
+        className="layout__container container-sm container-fluid"
       >
         {children}
       </div>
+      <Footer />
     </div>
   );
 };

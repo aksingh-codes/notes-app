@@ -1,24 +1,18 @@
-import React from 'react'
-import Note from './Note'
+import Note from "./Note";
+import { ReactComponent as EmptyLogo } from "../assets/undraw_add_notes_re_ln36.svg";
 
-const NotesGallery = () => {
-  const notes = [
-    {id: "0", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
-    {id: "1", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
-    {id: "2", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
-    {id: "3", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
-    {id: "4", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
-    {id: "5", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
-    {id: "6", title: "Title", content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis, delectus numquam illum nisi, aperiam eveniet reprehenderit perferendis distinctio consequuntur dolorum blanditiis voluptatem a. Quibusdam voluptatibus maiores deleniti voluptatem eum?"},
-  ]
-  return (
-    <div>
-      Notes Gallery
-      {
-        notes.map(note => <Note note={note}/>)
-      }
+const NotesGallery = ({notes}) => {
+  return notes && notes.length > 0 ? (
+    <div className="notes__gallery">
+      {notes.map((note) => (
+        <Note key={note.id} note={note} limit />
+      ))}
     </div>
-  )
-}
+  ) : (
+    <div style={{textAlign: 'center'}}>
+      <EmptyLogo style={{width: '40%'}} />
+    </div>
+  );
+};
 
-export default NotesGallery
+export default NotesGallery;
