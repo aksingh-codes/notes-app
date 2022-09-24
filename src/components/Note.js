@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import {ReactComponent as NotFoundLogo} from "../assets/undraw_empty_re_opql.svg"
 
 const Note = ({ note, limit }) => {
   const navigate = useNavigate();
+  
   return note ? (
     <div
       onClick={() => navigate(`/note/${note.id}`)}
@@ -22,7 +24,9 @@ const Note = ({ note, limit }) => {
       </div>
     </div>
   ) : (
-    <div>Note not found</div>
+    <div className="text-center">
+      <NotFoundLogo style={{width: '40%', height: '80%'}}/>
+    </div>
   );
 };
 

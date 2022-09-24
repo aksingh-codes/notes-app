@@ -4,6 +4,7 @@ import { NotesProvider } from "./contexts/NoteContext";
 import Create from "./pages/Create";
 import Edit from "./pages/Edit";
 import Home from "./pages/Home";
+import PageNotFound from "./pages/PageNotFound";
 import View from "./pages/View";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/create" element={<Create />} />
             <Route path="/edit/:id" element={<Edit />} />
             <Route path="/note/:id" element={<View />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
       </NotesProvider>
