@@ -1,11 +1,7 @@
-import React, { useContext } from "react";
-import { NotesContext } from "../contexts/NoteContext";
 import Note from "./Note";
 import { ReactComponent as EmptyLogo } from "../assets/undraw_add_notes_re_ln36.svg";
 
-const NotesGallery = () => {
-  const notes = useContext(NotesContext);
-
+const NotesGallery = ({notes}) => {
   return notes && notes.length > 0 ? (
     <div className="notes__gallery">
       {notes.map((note) => (
