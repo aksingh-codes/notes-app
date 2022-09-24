@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import noteReducer from "./noteReducer";
 
 const initialNotes = [
@@ -52,7 +52,13 @@ export const NotesContext = createContext(null);
 export const NotesDispatchContext = createContext(null);
 
 export const NotesProvider = ({ children }) => {
-  const [notes, dispatch] = useReducer(noteReducer, initialNotes);
+  const [notes, dispatch] = useReducer(noteReducer, [], () => {
+    const localData = localStorage.getItem("notes");
+    return localData ? JSON.parse(localData) : [];
+  });
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   return (
     <NotesContext.Provider value={notes}>
