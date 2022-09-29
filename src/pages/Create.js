@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import { NotesDispatchContext } from '../contexts/NoteContext'
 import { CREATE_NOTE } from "../contexts/noteActions";
 import { v4 as uuidv4 } from 'uuid';
+import randomBgColor from '../utils/randomBgColor'
 
 const Create = () => {
   const navigate = useNavigate();
@@ -24,7 +25,8 @@ const Create = () => {
         payload: {
           id: uuidv4(),
           title: title,
-          content: content
+          content: content,
+          bgColor: randomBgColor()
         }
       })
       navigate(-1)

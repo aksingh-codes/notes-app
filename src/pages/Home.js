@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Layout navItemRight={<SearchBar notes={notes} setNotesGallery={setNotesGallery} />}>
       <NotesGallery notes={notesGallery} />
-      <BsFillPlusSquareFill onClick={() => navigate("/create")} className="home__plusbtn" />
+      <BsFillPlusSquareFill onClick={() => navigate("/create")} className="home__plusbtn shadow" />
     </Layout>
   );
 };

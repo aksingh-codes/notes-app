@@ -28,6 +28,7 @@ code {
 .layout__container {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  margin-top: 56px;
 }
 
 .notes__gallery {
@@ -50,6 +51,10 @@ code {
 }
 
 @media screen and (max-width: 576px) {
+  .layout__container {
+    margin-top: 93.6px;
+  }
+
   .notes__gallery {
     grid-template-columns: 1fr;
   }
