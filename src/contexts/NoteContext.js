@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
+import bgColor from "../utils/randomBgColor";
 import noteReducer from "./noteReducer";
 
 const initialNotes = [
@@ -54,7 +55,8 @@ export const NotesDispatchContext = createContext(null);
 export const NotesProvider = ({ children }) => {
   const [notes, dispatch] = useReducer(noteReducer, [], () => {
     const localData = localStorage.getItem("notes");
-    return localData ? JSON.parse(localData) : [];
+    console.log(JSON.parse(localData))
+    return localData ? JSON.parse(localData) : initialNotes.map(note => { return {...note, bgColor: bgColor()} });
   });
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));

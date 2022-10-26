@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="container text-muted text-center mt-5">
+    <footer className="container text-muted text-center">
       {/* built by <a href="https://github.com/aksingh-codes">@aksingh-codes</a> */}
     </footer>
   );

@@ -2,6 +2,10 @@
   --small-padding: 0.75rem;
 }
 
+html {
+  background-color: #edf1f5;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,6 +20,10 @@ code {
     monospace;
 }
 
+.App {
+  background-color: #edf1f5;
+}
+
 .home__plusbtn {
   position: fixed;
   bottom: var(--small-padding);
@@ -28,6 +36,7 @@ code {
 .layout__container {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  margin-top: 56px;
 }
 
 .notes__gallery {
@@ -50,6 +59,10 @@ code {
 }
 
 @media screen and (max-width: 576px) {
+  .layout__container {
+    margin-top: 93.6px;
+  }
+
   .notes__gallery {
     grid-template-columns: 1fr;
   }

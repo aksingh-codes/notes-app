@@ -9,7 +9,7 @@ const NotesGallery = ({notes}) => {
       ))}
     </div>
   ) : (
-    <div style={{textAlign: 'center'}}>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center', height: 'calc(100vh - 120px)'}}>
       <EmptyLogo style={{width: '40%'}} />
     </div>
   );

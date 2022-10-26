@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import { NotesDispatchContext } from '../contexts/NoteContext'
 import { CREATE_NOTE } from "../contexts/noteActions";
 import { v4 as uuidv4 } from 'uuid';
+import randomBgColor from '../utils/randomBgColor'
 
 const Create = () => {
   const navigate = useNavigate();
@@ -24,7 +25,8 @@ const Create = () => {
         payload: {
           id: uuidv4(),
           title: title,
-          content: content
+          content: content,
+          bgColor: randomBgColor()
         }
       })
       navigate(-1)
@@ -35,8 +37,8 @@ const Create = () => {
     <Layout>
       <Editor {...editorProps}>
         <div className="d-flex gap-2" role="group">
-          <Button onClick={() => handleSave()} variant="outline-dark">Save</Button>
-          <Button onClick={() => navigate(-1)} variant="outline-dark">
+          <Button onClick={() => handleSave()} variant="dark">Save</Button>
+          <Button onClick={() => navigate(-1)} variant="dark">
             Cancel
           </Button>
         </div>
