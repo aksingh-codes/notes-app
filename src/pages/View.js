@@ -19,14 +19,14 @@ const View = () => {
         <h5 className="text-muted text-center mb-5">Your Note</h5>
         <Note note={note} />
         <div className="d-flex gap-2 mt-3" role="group">
-          <Button onClick={() => navigate(-1)} variant="outline-dark">Back</Button>
-          <Button onClick={() => navigate(`/edit/${note.id}`)} variant="outline-dark">Edit</Button>
+          <Button onClick={() => navigate(-1)} variant="dark">Back</Button>
+          <Button onClick={() => navigate(`/edit/${note.id}`)} variant="dark">Edit</Button>
           <Button
             onClick={() => {
               navigate(-1);
               dispatch({ type: DELETE_NOTE, payload: note.id });
             }}
-            variant="outline-danger"
+            variant="danger"
           >
             Delete
           </Button>

@@ -37,8 +37,8 @@ const Create = () => {
     <Layout>
       <Editor {...editorProps}>
         <div className="d-flex gap-2" role="group">
-          <Button onClick={() => handleSave()} variant="outline-dark">Save</Button>
-          <Button onClick={() => navigate(-1)} variant="outline-dark">
+          <Button onClick={() => handleSave()} variant="dark">Save</Button>
+          <Button onClick={() => navigate(-1)} variant="dark">
             Cancel
           </Button>
         </div>
